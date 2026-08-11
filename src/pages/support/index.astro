@@ -5,7 +5,7 @@ import Callout from "../../components/Callout.astro";
 
 interface Book {
   title: string;
-  author: string;
+  author?: string;
   href: string;
 }
 
@@ -76,11 +76,20 @@ const lsatAndGrePrep: Book[] = [
   { title: "The PowerScore GRE Quantitative Reasoning Bible", author: "Victoria Wood", href: "https://amzn.to/4g32tps" },
 ];
 
+const amazonServices: Book[] = [
+  { title: "Kindle Unlimited Membership: 24-month plan", href: "https://amzn.to/4xtyiPg" },
+  { title: "Audible Gift Membership: 12-month plan", href: "https://amzn.to/4fS8BlB" },
+  { title: "Audible Premium Plus Monthly Membership", href: "https://amzn.to/4bMLjLA" },
+  { title: "Prime Free Trial", href: "https://amzn.to/4wg11WJ" },
+  { title: "Prime Paid Membership", href: "https://amzn.to/45hR7sO" },
+];
+
 const categories = [
   { name: "Legal History & Biography", books: historyAndBiography },
   { name: "Legal Reference", books: legalReference },
   { name: "Bar Exam Prep", books: barExamPrep },
   { name: "LSAT & GRE Prep", books: lsatAndGrePrep },
+  { name: "Amazon Services & Memberships", books: amazonServices },
 ];
 ---
 
@@ -112,9 +121,9 @@ const categories = [
       <p>
         Reading the Law participates in the Amazon Associates Program, an affiliate advertising program
         designed to let sites earn a commission by linking to Amazon. If you click a link below and make a
-        purchase, we may earn a small commission at no additional cost to you. We only link to books we think
-        are genuinely useful for people on this path; we don't accept payment from publishers or authors to
-        include a title here.
+        purchase or sign up, we may earn a small commission at no additional cost to you. We only link to
+        books and services we think are genuinely useful for people on this path; we don't accept payment
+        from publishers or authors to include a title here.
       </p>
 
       {
@@ -130,7 +139,7 @@ const categories = [
                   class="group rounded-lg border border-navy/10 bg-white p-4 transition hover:border-brass hover:shadow-md"
                 >
                   <p class="font-serif text-sm font-bold leading-snug text-navy group-hover:text-brass">{book.title}</p>
-                  <p class="mt-1 text-xs text-ink-light">{book.author}</p>
+                  {book.author && <p class="mt-1 text-xs text-ink-light">{book.author}</p>}
                   <span class="mt-2 inline-block text-xs font-semibold text-brass group-hover:text-navy">
                     View on Amazon →
                   </span>
