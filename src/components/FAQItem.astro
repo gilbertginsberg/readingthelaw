@@ -1,0 +1,22 @@
+---
+interface Props {
+  question: string;
+  id?: string;
+  open?: boolean;
+}
+const { question, id, open = false } = Astro.props;
+---
+
+<details id={id} class="group border-b border-navy/10 py-5 last:border-b-0" open={open}>
+  <summary class="flex cursor-pointer list-none items-start justify-between gap-4 font-serif text-base font-bold text-navy marker:content-none">
+    <span>{question}</span>
+    <span class="mt-0.5 shrink-0 text-brass transition-transform group-open:rotate-45">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+    </span>
+  </summary>
+  <div class="prose-legal mt-3 [&>p:last-child]:mb-0">
+    <slot />
+  </div>
+</details>

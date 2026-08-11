@@ -1,0 +1,19 @@
+---
+interface Props {
+  tone?: "warning" | "info" | "brass";
+  title?: string;
+}
+const { tone = "info", title } = Astro.props;
+const toneClasses: Record<string, string> = {
+  warning: "border-amber-300 bg-amber-50 text-amber-950",
+  info: "border-navy/15 bg-navy/5 text-ink",
+  brass: "border-brass/30 bg-brass/10 text-ink",
+};
+---
+
+<div class:list={["not-prose my-6 rounded-md border px-5 py-4 text-sm leading-relaxed", toneClasses[tone]]}>
+  {title && <p class="mb-1.5 font-serif text-base font-bold">{title}</p>}
+  <div class="[&_a]:underline [&_a]:decoration-brass [&_a]:underline-offset-2">
+    <slot />
+  </div>
+</div>

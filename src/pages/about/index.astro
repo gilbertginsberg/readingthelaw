@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="About"
+  description="Why we built Reading the Law: an independent, no-nonsense guide to the apprenticeship path to becoming an attorney, and the matchmaking platform we're building next."
+>
+  <PageHeader eyebrow="About" title="Why this site exists" />
+
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    <article class="prose-legal">
+      <p class="text-lg">
+        Law school now routinely costs six figures, and for a lot of capable people, that's simply not a
+        reasonable trade for a career. Most of them never learn that four U.S. states still let you
+        become a fully licensed attorney by apprenticing under a practicing lawyer or judge instead —
+        because the information is scattered across dense rule text, decades-old forum threads, and the
+        occasional viral news story about a celebrity attempting it.
+      </p>
+      <p>
+        We built Reading the Law to put the real rules, requirements, and trade-offs for every active
+        apprenticeship state in one honest, current place — including the parts that don't make for a good
+        headline, like lower bar passage rates and limited license portability.
+      </p>
+
+      <h2>What we're building next</h2>
+      <p>
+        The information on this site solves the "I didn't know this was possible" problem. It doesn't solve
+        the next one: every program requires you to find your own supervising attorney or judge, and there's
+        currently no structured way to do that beyond your personal network. We're building a
+        <a href="/matchmaking/">matchmaking platform</a> to connect aspiring apprentices directly with
+        attorneys and judges open to sponsoring one — because we think that's the real barrier keeping this
+        path from being viable for more people, not the studying itself.
+      </p>
+
+      <h2>What this site is — and isn't</h2>
+      <ul>
+        <li>We are not a law firm, a state bar, a board of bar examiners, or any government body.</li>
+        <li>We don't provide legal advice, and nothing on this site should be treated as a substitute for confirming current rules directly with the relevant state authority.</li>
+        <li>We aren't affiliated with, endorsed by, or acting on behalf of California, Vermont, Virginia, Washington, Maine, or New York's bar admissions authorities.</li>
+        <li>We're an independent project built for people seriously evaluating this path, not marketing copy for any bar-prep company, law school, or admissions consultant.</li>
+      </ul>
+
+      <Callout tone="info" title="Found something out of date?">
+        Bar admission rules change. If you notice something on this site that no longer matches your
+        state's official rule, we want to fix it — every page links to the official governing body so you
+        can verify independently in the meantime.
+      </Callout>
+    </article>
+  </div>
+</BaseLayout>

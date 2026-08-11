@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://readingthelaw.org/sitemap-index.xml
