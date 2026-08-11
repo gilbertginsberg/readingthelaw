@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Callout from "../../components/Callout.astro";
+
+interface Book {
+  title: string;
+  author: string;
+  href: string;
+}
+
+const historyAndBiography: Book[] = [
+  { title: "Benjamin Franklin: An American Life", author: "Walter Isaacson", href: "https://amzn.to/4xFN5qp" },
+  { title: "Alexander Hamilton", author: "Ron Chernow", href: "https://amzn.to/4qduW0n" },
+  { title: "Lincoln the Lawyer", author: "Brian R. Dirck", href: "https://amzn.to/4ceqf0w" },
+  {
+    title: "The Constitution of the United States of America: The Declaration of Independence, The Bill of Rights",
+    author: "Founding Fathers",
+    href: "https://amzn.to/4fPYeyK",
+  },
+];
+
+const legalReference: Book[] = [
+  { title: "Black's Law Dictionary, 12th Edition", author: "Bryan A. Garner", href: "https://amzn.to/4xA2Hvt" },
+];
+
+const barExamPrep: Book[] = [
+  {
+    title: "Strategies & Tactics for the Finz Multistate Method (Bar Review)",
+    author: "Steven Finz, Alex Ruskell",
+    href: "https://amzn.to/3S7ohbA",
+  },
+  { title: "Examples & Explanations for The Law of Torts", author: "Joseph W. Glannon", href: "https://amzn.to/4bKKOS7" },
+  { title: "Examples & Explanations for Criminal Law", author: "Shima Baradaran Baughman", href: "https://amzn.to/4i3As3C" },
+  {
+    title: "Examples & Explanations for Family Law",
+    author: "Robert E. Oliphant, Nancy Ver Steegh, Stephanie L. Tang",
+    href: "https://amzn.to/4hu2Bk9",
+  },
+  {
+    title: "Examples & Explanations for Legislation, Statutory Interpretation, and Election Law",
+    author: "Richard L. Hasen",
+    href: "https://amzn.to/4hu2DZj",
+  },
+  {
+    title: "Examples & Explanations for Legal Writing",
+    author: "Terrill Pollman, Judith M. Stinson",
+    href: "https://amzn.to/4wroyUF",
+  },
+  {
+    title: "Examples & Explanations for International Law",
+    author: "Valerie Epps, Lorie Graham, Daniel Rietiker, Amy B. Van Zyl-Chavarro",
+    href: "https://amzn.to/4i3Onqp",
+  },
+  { title: "Examples & Explanations for Dispute Resolution", author: "Michael L. Moffitt", href: "https://amzn.to/3Ubby8h" },
+  { title: "Examples & Explanations for Evidence", author: "Arthur Best", href: "https://amzn.to/4wZU5yq" },
+  { title: "Examples & Explanations for Copyright Law", author: "McJohn M. Stephen", href: "https://amzn.to/3U7xb9x" },
+];
+
+const lsatAndGrePrep: Book[] = [
+  {
+    title: "The PowerScore LSAT Bible Practice Pack 2026-2027",
+    author: "David M. Killoran, Jon M. Denning",
+    href: "https://amzn.to/45hE62r",
+  },
+  {
+    title: "The PowerScore LSAT Workbook Pack 2026-2027",
+    author: "David M. Killoran, Jon M. Denning",
+    href: "https://amzn.to/4zdQdLt",
+  },
+  {
+    title: "PowerScore GRE Verbal Reasoning Bible",
+    author: "Victoria Wood, Terry Bray (Editor)",
+    href: "https://amzn.to/4q97nWJ",
+  },
+  { title: "The PowerScore GRE Quantitative Reasoning Bible", author: "Victoria Wood", href: "https://amzn.to/4g32tps" },
+];
+
+const categories = [
+  { name: "Legal History & Biography", books: historyAndBiography },
+  { name: "Legal Reference", books: legalReference },
+  { name: "Bar Exam Prep", books: barExamPrep },
+  { name: "LSAT & GRE Prep", books: lsatAndGrePrep },
+];
+---
+
+<BaseLayout
+  title="Support Reading the Law"
+  description="How to support Reading the Law: an independent, ad-light guide to becoming a lawyer through apprenticeship, kept running by readers instead of a law school's marketing budget."
+>
+  <PageHeader
+    eyebrow="Support Us"
+    title="Support Reading the Law"
+    subtitle="This site is free, independent, and runs without institutional backing. Here's how you can help keep it that way."
+  />
+
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    <article class="prose-legal">
+      <p class="text-lg">
+        Reading the Law doesn't have a law school's marketing budget or a bar-prep company's ad spend behind
+        it. It runs on volunteer time, hosting costs, and the modest ad revenue on this page. If the site has
+        been useful to you, here are a few ways to help keep it going.
+      </p>
+
+      <h2>Donate directly</h2>
+      <Callout tone="info" title="Coming soon">
+        We don't have a donation link set up yet. When we do, it'll appear here and in the footer. In the
+        meantime, the best way to support the site directly is through the affiliate links below, or by <a href="mailto:readingthelaw@gmail.com">telling us</a> what would make this resource more useful to you.
+      </Callout>
+
+      <h2>Shop through our affiliate links</h2>
+      <p>
+        Reading the Law participates in the Amazon Associates Program, an affiliate advertising program
+        designed to let sites earn a commission by linking to Amazon. If you click a link below and make a
+        purchase, we may earn a small commission at no additional cost to you. We only link to books we think
+        are genuinely useful for people on this path; we don't accept payment from publishers or authors to
+        include a title here.
+      </p>
+
+      {
+        categories.map((category) => (
+          <>
+            <h3>{category.name}</h3>
+            <div class="not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {category.books.map((book) => (
+                <a
+                  href={book.href}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  class="group rounded-lg border border-navy/10 bg-white p-4 transition hover:border-brass hover:shadow-md"
+                >
+                  <p class="font-serif text-sm font-bold leading-snug text-navy group-hover:text-brass">{book.title}</p>
+                  <p class="mt-1 text-xs text-ink-light">{book.author}</p>
+                  <span class="mt-2 inline-block text-xs font-semibold text-brass group-hover:text-navy">
+                    View on Amazon →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </>
+        ))
+      }
+
+      <Callout tone="brass" title="Have a book to suggest?">
+        If there's a book that helped you through reading the law, the bar exam, or the LSAT/GRE that isn't
+        listed here, <a href="mailto:readingthelaw@gmail.com">let us know</a> and we'll consider adding it.
+      </Callout>
+    </article>
+  </div>
+</BaseLayout>
