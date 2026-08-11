@@ -12,11 +12,12 @@ import Callout from "../../components/Callout.astro";
 
   <div class="mx-auto max-w-3xl px-5 py-16">
     <Callout tone="info" title="Plain-language summary">
-      We don't run accounts, ads, or trackers on this Site, and we don't collect anything through a form of
-      our own. Visiting the Site generates the same kind of basic technical logs any website generates.
-      Loading our fonts pings Google's font service. If you join the matchmaking waitlist, you're filling
-      out a Google Form, so that information is handled under Google's privacy policy, not just ours. The
-      full policy below spells this out in more detail.
+      We don't run accounts or ads on this Site, and we don't collect anything through a form of our own. We
+      do use Matomo, a privacy-focused web analytics tool, to understand overall traffic; it sets a few
+      cookies and logs standard visit data like page views and browser type, but we don't use it to build
+      advertising profiles or sell your data. Loading our fonts pings Google's font service. If you join the
+      matchmaking waitlist, you're filling out a Google Form, so that information is handled under Google's
+      privacy policy, not just ours. The full policy below spells this out in more detail.
     </Callout>
 
     <article class="prose-legal">
@@ -32,16 +33,19 @@ import Callout from "../../components/Callout.astro";
       <p>
         Like most websites, our hosting provider automatically logs some technical information whenever you
         visit, such as your IP address, browser and device type, pages viewed, referring page, and
-        timestamps. This information is collected through standard server and hosting logs rather than
-        through any tracking script we've added ourselves, and we use it only in aggregate, for purposes
-        like keeping the Site secure and understanding overall traffic patterns.
+        timestamps. We also use Matomo Analytics, described below, to collect similar visit information in
+        aggregate. We use this information for purposes like keeping the Site secure and understanding
+        overall traffic patterns, not to identify individual visitors.
       </p>
 
       <h2>3. Cookies and similar technologies</h2>
       <p>
-        We don't set our own cookies or use third-party advertising or analytics trackers on the Site. Our
-        hosting provider may use minimal technical cookies necessary to serve the Site reliably. If that
-        changes (for example, if we add analytics in the future), we'll update this policy to describe what
+        We use Matomo, a web analytics service, to understand how visitors use the Site. Matomo sets a
+        small number of first-party-style cookies (served from Matomo's cloud infrastructure) to
+        distinguish visits and visitors, for example to avoid double-counting a single visit as two. These
+        cookies don't identify you by name and aren't used for advertising or shared with ad networks. Our
+        hosting provider may also use minimal technical cookies necessary to serve the Site reliably. If we
+        add any additional cookie-based tools in the future, we'll update this policy to describe what
         we've added and why.
       </p>
 
@@ -49,6 +53,7 @@ import Callout from "../../components/Callout.astro";
       <p>We rely on a small number of third-party services to run the Site:</p>
       <ul>
         <li><strong>Hosting (Vercel).</strong> The Site is hosted on Vercel's infrastructure, which processes standard connection and request data to serve pages to you.</li>
+        <li><strong>Analytics (Matomo Cloud).</strong> We use Matomo, hosted at geodework.matomo.cloud, to measure page views and general visit patterns. Matomo Cloud processes standard visit data (such as IP address, browser, device, pages viewed, and referring page) on our behalf. See <a href="https://matomo.org/privacy-policy/" target="_blank" rel="noopener noreferrer">Matomo's Privacy Policy</a> for details on how the underlying service handles data.</li>
         <li><strong>Fonts (Google Fonts).</strong> We load typefaces from Google's font service. Loading a page on this Site may send your IP address and browser information to Google as part of that request. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> for details.</li>
         <li><strong>Matchmaking waitlist (Google Forms).</strong> The "Join the Waitlist" link on our <a href="/matchmaking/">matchmaking page</a> currently opens a Google Form in a new tab. Any name, email address, or other information you submit there is collected and stored by Google on our behalf, subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and, where applicable, Google Forms' terms. We use that information solely to follow up about the matchmaking platform.</li>
       </ul>
