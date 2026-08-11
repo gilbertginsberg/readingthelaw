@@ -1,7 +1,7 @@
 {
   "name": "readingthelaw",
   "version": "1.0.0",
-  "description": "Reading the Law — the definitive guide to becoming a lawyer through apprenticeship instead of law school.",
+  "description": "Reading the Law: the definitive guide to becoming a lawyer through apprenticeship instead of law school.",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
