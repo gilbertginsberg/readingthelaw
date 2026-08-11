@@ -45,82 +45,21 @@ import PageHeader from "../../components/PageHeader.astro";
       </p>
     </div>
 
-    <div id="waitlist" class="mt-12 rounded-xl border border-navy/10 bg-navy p-8 sm:p-10">
+    <div id="waitlist" class="mt-12 rounded-xl border border-navy/10 bg-navy p-8 text-center sm:p-10">
       <h2 class="font-serif text-xl font-bold text-parchment">Join the waitlist</h2>
-      <p class="mt-2 text-sm text-parchment/70">
-        Tell us who you are and we'll reach out when the platform is ready. This opens your email client —
-        we don't collect or store anything on this page.
+      <p class="mx-auto mt-2 max-w-md text-sm text-parchment/70">
+        Tell us whether you're an aspiring apprentice or an attorney open to sponsoring one, and we'll reach
+        out when the platform is ready. Takes about a minute.
       </p>
-      <form id="waitlist-form" class="mt-6 space-y-4">
-        <div>
-          <span class="mb-2 block text-sm font-semibold text-parchment/90">I am a...</span>
-          <div class="flex flex-col gap-2 sm:flex-row">
-            <label class="flex flex-1 cursor-pointer items-center gap-2 rounded-md border border-parchment/20 bg-parchment/5 px-4 py-3 text-sm text-parchment has-[:checked]:border-brass has-[:checked]:bg-brass/10">
-              <input type="radio" name="role" value="Aspiring apprentice" checked class="accent-brass" />
-              Aspiring apprentice
-            </label>
-            <label class="flex flex-1 cursor-pointer items-center gap-2 rounded-md border border-parchment/20 bg-parchment/5 px-4 py-3 text-sm text-parchment has-[:checked]:border-brass has-[:checked]:bg-brass/10">
-              <input type="radio" name="role" value="Attorney open to sponsoring" class="accent-brass" />
-              Attorney open to sponsoring
-            </label>
-          </div>
-        </div>
-        <div>
-          <label for="waitlist-name" class="mb-2 block text-sm font-semibold text-parchment/90">Name</label>
-          <input
-            id="waitlist-name"
-            name="name"
-            type="text"
-            required
-            class="w-full rounded-md border border-parchment/20 bg-parchment/5 px-4 py-3 text-sm text-parchment placeholder:text-parchment/40 focus:border-brass focus:outline-none"
-            placeholder="Jane Doe"
-          />
-        </div>
-        <div>
-          <label for="waitlist-email" class="mb-2 block text-sm font-semibold text-parchment/90">Email</label>
-          <input
-            id="waitlist-email"
-            name="email"
-            type="email"
-            required
-            class="w-full rounded-md border border-parchment/20 bg-parchment/5 px-4 py-3 text-sm text-parchment placeholder:text-parchment/40 focus:border-brass focus:outline-none"
-            placeholder="you@example.com"
-          />
-        </div>
-        <div>
-          <label for="waitlist-state" class="mb-2 block text-sm font-semibold text-parchment/90">State you're interested in</label>
-          <input
-            id="waitlist-state"
-            name="state"
-            type="text"
-            class="w-full rounded-md border border-parchment/20 bg-parchment/5 px-4 py-3 text-sm text-parchment placeholder:text-parchment/40 focus:border-brass focus:outline-none"
-            placeholder="California, Vermont, Virginia, Washington..."
-          />
-        </div>
-        <button
-          type="submit"
-          class="w-full rounded-sm bg-brass px-6 py-3.5 font-semibold text-navy transition hover:bg-brass-light"
-        >
-          Join the Waitlist →
-        </button>
-      </form>
+      <a
+        href="https://forms.gle/DYcw6eYWM5KXxAnB9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-block w-full rounded-sm bg-brass px-6 py-3.5 font-semibold text-navy transition hover:bg-brass-light sm:w-auto sm:px-10"
+      >
+        Join the Waitlist →
+      </a>
+      <p class="mt-3 text-xs text-parchment/40">Opens a short Google Form in a new tab.</p>
     </div>
   </div>
-
-  <script>
-    const form = document.getElementById("waitlist-form") as HTMLFormElement | null;
-    form?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const role = data.get("role");
-      const name = data.get("name");
-      const email = data.get("email");
-      const state = data.get("state") || "Not specified";
-      const subject = encodeURIComponent(`Reading the Law waitlist — ${role}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nRole: ${role}\nState of interest: ${state}`
-      );
-      window.location.href = `mailto:hello@readingthelaw.org?subject=${subject}&body=${body}`;
-    });
-  </script>
 </BaseLayout>

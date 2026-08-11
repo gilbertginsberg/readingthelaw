@@ -42,7 +42,11 @@ page) rather than relying solely on prior content.
 
 ## Waitlist form
 
-The waitlist form on `/matchmaking/` currently opens the visitor's email client via a `mailto:` link to
-`hello@readingthelaw.org` (see `src/pages/matchmaking/index.astro`). That address is a placeholder —
-replace it with a real inbox you control, or swap the submit handler for a real form backend (e.g.
-Formspree, a serverless function, or your own API) before launch.
+The "Join the Waitlist" button on `/matchmaking/` links out to a Google Form
+(https://forms.gle/DYcw6eYWM5KXxAnB9) in a new tab (see `src/pages/matchmaking/index.astro`). Update that
+URL if the form is ever recreated, or swap it for a different backend (e.g. Formspree, a serverless
+function, or your own API) later on.
+
+## Contact
+
+The site's contact address is `readingthelaw@gmail.com`.
