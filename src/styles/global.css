@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Source Serif 4", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-ink: #16233b;
+  --color-ink-light: #2f4368;
+  --color-parchment: #faf7f0;
+  --color-parchment-dark: #f1ebdd;
+  --color-brass: #a9822a;
+  --color-brass-light: #c9a03f;
+  --color-navy: #0f1c33;
+  --color-navy-light: #1b3157;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.prose-legal h2 {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-parchment-dark);
+}
+
+.prose-legal h3 {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-legal p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--color-ink-light);
+}
+
+.prose-legal ul, .prose-legal ol {
+  margin-bottom: 1.25rem;
+  margin-left: 1.5rem;
+  line-height: 1.75;
+  color: var(--color-ink-light);
+}
+
+.prose-legal ul {
+  list-style-type: disc;
+}
+
+.prose-legal ol {
+  list-style-type: decimal;
+}
+
+.prose-legal li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-legal strong {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.prose-legal a {
+  color: var(--color-brass);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-legal a:hover {
+  color: var(--color-navy);
+}

@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Mentor Matchmaking: Coming Soon"
+  description="A future platform connecting aspiring law readers with attorneys and judges open to sponsoring an apprenticeship. Join the waitlist as an apprentice or a sponsoring attorney."
+>
+  <PageHeader
+    eyebrow="Coming Soon"
+    title="Connecting apprentices with sponsoring attorneys"
+    subtitle="Finding a mentor willing to commit years of supervision is the biggest barrier to reading the law. We're building a platform to fix that."
+  />
+
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div class="rounded-lg border border-navy/10 bg-white p-6">
+        <h2 class="font-serif text-lg font-bold text-navy">For aspiring apprentices</h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink-light">
+          Search for attorneys and judges by state, practice area, and availability instead of cold-emailing
+          your way through a network you don't have yet. Build a profile that shows you're serious.
+        </p>
+      </div>
+      <div class="rounded-lg border border-navy/10 bg-white p-6">
+        <h2 class="font-serif text-lg font-bold text-navy">For sponsoring attorneys</h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink-light">
+          Review candidates who already understand your state's requirements and the commitment involved,
+          instead of starting from scratch every time someone asks you to consider mentoring them.
+        </p>
+      </div>
+    </div>
+
+    <div class="prose-legal mt-12">
+      <h2>What we're planning to build</h2>
+      <ul>
+        <li><strong>Searchable profiles</strong> for apprentices and sponsoring attorneys, filterable by state program, practice area, and time availability.</li>
+        <li><strong>Structured onboarding</strong> that walks both sides through their specific state's requirements before they ever have a conversation, so nobody starts from zero.</li>
+        <li><strong>Progress tracking tools</strong> to help apprentices and supervisors log required study hours and milestones together.</li>
+        <li><strong>A vetting layer</strong> so apprentices can verify a prospective supervisor's bar status and experience, and attorneys can see a candidate's seriousness and prior preparation.</li>
+      </ul>
+      <p>
+        None of this exists yet. This page is a placeholder for a real platform we're actively building.
+        The fastest way to shape what we build is to tell us what you need below.
+      </p>
+    </div>
+
+    <div id="waitlist" class="mt-12 rounded-xl border border-navy/10 bg-navy p-8 text-center sm:p-10">
+      <h2 class="font-serif text-xl font-bold text-parchment">Join the waitlist</h2>
+      <p class="mx-auto mt-2 max-w-md text-sm text-parchment/70">
+        Tell us whether you're an aspiring apprentice or an attorney open to sponsoring one, and we'll reach
+        out when the platform is ready. Takes about a minute.
+      </p>
+      <a
+        href="https://forms.gle/DYcw6eYWM5KXxAnB9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-block w-full rounded-sm bg-brass px-6 py-3.5 font-semibold text-navy transition hover:bg-brass-light sm:w-auto sm:px-10"
+      >
+        Join the Waitlist →
+      </a>
+      <p class="mt-3 text-xs text-parchment/40">Opens a short Google Form in a new tab.</p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { activeStates } from "../data/states";
+---
+
+<BaseLayout
+  title="Reading the Law"
+  description="The definitive guide to becoming a lawyer through legal apprenticeship: no law school, no six-figure debt. Learn how California, Vermont, Virginia, and Washington let you read the law."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy">
+    <div class="absolute inset-0 opacity-[0.06]" style="background-image: radial-gradient(circle at 1px 1px, #fff 1px, transparent 0); background-size: 24px 24px;"></div>
+    <div class="relative mx-auto max-w-5xl px-5 py-24 text-center sm:py-32">
+      <p class="font-semibold uppercase tracking-widest text-brass-light text-xs">Reading the Law</p>
+      <h1 class="mx-auto mt-4 max-w-3xl font-serif text-4xl font-bold leading-tight text-parchment sm:text-5xl">
+        Become a real, bar-licensed lawyer without law school debt
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-parchment/75">
+        In four U.S. states, you can still become an attorney by apprenticing directly under a practicing
+        lawyer or judge instead of attending law school. It's called <strong class="text-parchment">reading the law</strong>,
+        and it's exactly how Abraham Lincoln, and thousands of American lawyers before the 20th century, got their start.
+      </p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href="/what-is-reading-the-law/" class="w-full rounded-sm bg-brass px-7 py-3.5 text-center font-semibold text-navy transition hover:bg-brass-light sm:w-auto">
+          Learn How It Works
+        </a>
+        <a href="/states/" class="w-full rounded-sm border border-parchment/25 px-7 py-3.5 text-center font-semibold text-parchment transition hover:border-parchment/50 sm:w-auto">
+          Compare State Programs
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-parchment/40">
+        Not legal advice, just educational information. See our <a href="/disclaimer/" class="underline hover:text-parchment/70">disclaimer</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="border-b border-navy/10 bg-parchment-dark/60">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-6 px-5 py-10 text-center sm:grid-cols-4">
+      <div>
+        <p class="font-serif text-3xl font-bold text-navy">4</p>
+        <p class="mt-1 text-xs uppercase tracking-wide text-ink-light">Pure apprenticeship states</p>
+      </div>
+      <div>
+        <p class="font-serif text-3xl font-bold text-navy">2</p>
+        <p class="mt-1 text-xs uppercase tracking-wide text-ink-light">Hybrid combination states</p>
+      </div>
+      <div>
+        <p class="font-serif text-3xl font-bold text-navy">$0</p>
+        <p class="mt-1 text-xs uppercase tracking-wide text-ink-light">Required tuition in CA / VT / VA / WA</p>
+      </div>
+      <div>
+        <p class="font-serif text-3xl font-bold text-navy">3–4</p>
+        <p class="mt-1 text-xs uppercase tracking-wide text-ink-light">Years of full-time study required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is it, short -->
+  <section class="mx-auto max-w-5xl px-5 py-20">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brass">The alternative path</p>
+        <h2 class="mt-3 font-serif text-3xl font-bold text-navy">
+          Law school isn't the only door to the bar exam
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink-light">
+          Before the American Bar Association standardized legal education around university law schools,
+          nearly every lawyer in the country learned the same way: by reading law books and working
+          alongside a practicing attorney for several years. That path never disappeared. It's still
+          written into the admission rules of California, Vermont, Virginia, and Washington today.
+        </p>
+        <p class="mt-4 leading-relaxed text-ink-light">
+          Instead of paying law school tuition, you register as a law clerk or "reader," study a
+          structured curriculum under a supervising attorney or judge, and, after several years,
+          sit for the same state bar examination as any law school graduate. Pass it, and you're a
+          licensed attorney with the same license as anyone else.
+        </p>
+        <a href="/what-is-reading-the-law/" class="mt-6 inline-block font-semibold text-brass hover:text-navy">
+          Read the full explainer →
+        </a>
+      </div>
+      <div class="rounded-lg border border-navy/10 bg-white p-8 shadow-sm">
+        <h3 class="font-serif text-lg font-bold text-navy">This path is not a shortcut</h3>
+        <p class="mt-3 text-sm leading-relaxed text-ink-light">
+          Be honest with yourself before you commit:
+        </p>
+        <ul class="mt-4 space-y-3 text-sm text-ink-light">
+          <li class="flex gap-2"><span class="text-brass">•</span> It takes 3–4 years of genuinely full-time study, the same as law school.</li>
+          <li class="flex gap-2"><span class="text-brass">•</span> You must find your own supervising attorney; nobody assigns one to you (yet).</li>
+          <li class="flex gap-2"><span class="text-brass">•</span> Bar passage rates for apprentice-trained candidates run well below ABA law school graduates.</li>
+          <li class="flex gap-2"><span class="text-brass">•</span> Your license may only be portable to a limited number of other states.</li>
+        </ul>
+        <a href="/faq/" class="mt-5 inline-block text-sm font-semibold text-brass hover:text-navy">See the full FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- States grid -->
+  <section class="border-y border-navy/10 bg-parchment-dark/40">
+    <div class="mx-auto max-w-5xl px-5 py-20">
+      <div class="text-center">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brass">Where it's legal</p>
+        <h2 class="mt-3 font-serif text-3xl font-bold text-navy">Four states, four different programs</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink-light">
+          California, Vermont, Virginia, and Washington each let you skip law school entirely. The rules
+          (duration, hours, who can supervise you) vary a lot from state to state.
+        </p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {
+          activeStates.map((state) => (
+            <a
+              href={`/states/${state.slug}/`}
+              class="group rounded-lg border border-navy/10 bg-white p-6 transition hover:border-brass hover:shadow-md"
+            >
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-serif text-xl font-bold text-navy group-hover:text-brass">{state.name}</h3>
+                  <p class="mt-1 text-sm font-medium text-brass">{state.programName}</p>
+                </div>
+                <span class="rounded-full bg-navy/5 px-3 py-1 text-xs font-semibold text-navy">{state.duration.split(" ")[0]} yrs</span>
+              </div>
+              <p class="mt-3 text-sm leading-relaxed text-ink-light">{state.summary}</p>
+              <span class="mt-4 inline-block text-sm font-semibold text-brass group-hover:text-navy">
+                View {state.name} requirements →
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/states/" class="font-semibold text-brass hover:text-navy">
+          See the full state-by-state comparison, plus hybrid programs in Maine and New York →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matchmaking teaser -->
+  <section class="mx-auto max-w-5xl px-5 py-20">
+    <div class="grid grid-cols-1 items-center gap-10 rounded-xl border border-navy/10 bg-navy px-8 py-12 sm:px-12 md:grid-cols-2">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brass-light">Coming soon</p>
+        <h2 class="mt-3 font-serif text-2xl font-bold text-parchment sm:text-3xl">
+          The hardest part isn't the studying: it's finding a sponsor
+        </h2>
+        <p class="mt-4 text-parchment/70">
+          Every program on this site requires you to find your own supervising attorney or judge willing to
+          commit years of mentorship. We're building a matchmaking platform to connect aspiring apprentices
+          with attorneys open to sponsoring one, so that step stops being the biggest barrier to entry.
+        </p>
+      </div>
+      <div class="rounded-lg bg-parchment p-6 text-center">
+        <p class="font-serif text-lg font-bold text-navy">Join the waitlist</p>
+        <p class="mt-2 text-sm text-ink-light">
+          Whether you're looking to apprentice or willing to sponsor a reader, get notified when the platform launches.
+        </p>
+        <a href="/matchmaking/" class="mt-5 inline-block w-full rounded-sm bg-brass px-6 py-3 font-semibold text-navy hover:bg-brass-light">
+          Get Early Access →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

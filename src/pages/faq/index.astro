@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import FAQItem from "../../components/FAQItem.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Frequently Asked Questions"
+  description="Straight answers about reading the law: cost, timelines, bar passage rates, career prospects, license portability, and how to find a supervising attorney."
+>
+  <PageHeader eyebrow="FAQ" title="Frequently asked questions" subtitle="Direct answers, including the uncomfortable ones." />
+
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    <h2 class="font-serif text-xl font-bold text-navy">General</h2>
+    <div class="mt-2">
+      <FAQItem question="Is reading the law actually legal?" open={true}>
+        <p>
+          Yes. California, Vermont, Virginia, and Washington all have current, active rules that let you
+          qualify to sit their bar exam through supervised law office study instead of law school. Maine and
+          New York allow a hybrid combination of the two. These aren't loopholes; they're written directly
+          into each state's official rules for admission to the bar. See our <a href="/states/">state guides</a>
+          for the specific rule citations.
+        </p>
+      </FAQItem>
+      <FAQItem question="Will I have the exact same law license as someone who went to law school?">
+        <p>
+          Yes, within the state that admits you. A law license doesn't record how you qualified for the bar
+          exam. Once you pass and are admitted, you're a lawyer in that state with the same rights and
+          responsibilities as any other lawyer admitted there.
+        </p>
+      </FAQItem>
+      <FAQItem question="Is this the same thing as an online law school or an unaccredited law school?">
+        <p>
+          No. Reading the law means studying directly under a supervising attorney or judge, generally in
+          their office, with no school (online, unaccredited, or otherwise) involved at all. Some states
+          separately allow unaccredited or online law schools as yet another non-ABA path, but that's a
+          different route with its own rules and is not covered on this site.
+        </p>
+      </FAQItem>
+    </div>
+
+    <h2 class="mt-14 font-serif text-xl font-bold text-navy">Cost &amp; Time</h2>
+    <div class="mt-2">
+      <FAQItem question="How much does it actually cost?">
+        <p>
+          There's no tuition, which is the headline benefit: law school tuition alone commonly runs well
+          into six figures over three years. You should still budget for state registration and bar
+          application fees, required study materials and commercial bar-prep courses, the bar exam fee
+          itself, character-and-fitness investigation fees, and, critically, your living expenses during
+          3–4 years when you may be working reduced hours to study. Many apprentices work part-time or in a
+          paid role at their supervising attorney's office to cover living costs while they study.
+        </p>
+      </FAQItem>
+      <FAQItem question="How long does it take?">
+        <p>
+          Three years in Virginia; four years in California, Vermont, and Washington, assuming you study
+          the required hours consistently and don't need to repeat any portion. That's comparable to a
+          full-time J.D. program's three years, sometimes longer, since apprenticeship states generally
+          require more total hours of study than a standard law school credit load.
+        </p>
+      </FAQItem>
+      <FAQItem question="Can I work a full-time job while doing this?">
+        <p>
+          Generally, no. Not a full-time job unrelated to your studies. Every active program requires a
+          substantial, sustained weekly time commitment (roughly 18–32 hours per week depending on the
+          state) specifically devoted to supervised legal study, on top of which most apprentices also do
+          real legal work for their supervising attorney. Many apprentices structure this as a paid or
+          part-time position within their supervisor's practice, which helps cover living costs, but treating
+          this as a side project alongside an unrelated full-time job is not realistic and, in most states,
+          would not satisfy the hourly requirements anyway.
+        </p>
+      </FAQItem>
+    </div>
+
+    <h2 class="mt-14 font-serif text-xl font-bold text-navy">Bar Exam &amp; Passage Rates</h2>
+    <div class="mt-2">
+      <FAQItem question="Is it actually harder to pass the bar this way?">
+        <p>
+          Statistically, yes. Bar passage rates for candidates who studied through law office study are
+          consistently lower than for graduates of ABA-accredited law schools, in every state that publishes
+          the breakdown. That doesn't mean it's impossible (every year, some law readers pass), but you
+          should treat the odds honestly rather than assume a mentor-led path is an easier way to the same
+          outcome.
+        </p>
+      </FAQItem>
+      <FAQItem question="What is the 'Baby Bar' and do I have to take it?">
+        <p>
+          The Baby Bar (formally the First-Year Law Students' Examination) is a California-specific exam
+          you must pass after your first year of non-ABA law study (including law office study) before
+          your later years of study will count. It has a reputation as one of the hardest single exams in
+          American legal education, with historically low first-time pass rates. Vermont, Virginia, and
+          Washington do not have an equivalent single high-stakes first-year exam, though Washington
+          requires ongoing subject exams throughout the whole program.
+        </p>
+      </FAQItem>
+      <FAQItem question="What happens if I fail an interim exam or fall behind?">
+        <p>
+          It depends on the state and the specific requirement. In California, failing the Baby Bar three
+          times generally means losing credit for your first year of study and restarting the clock. In
+          Washington, your tutor's subject exams and periodic progress reports are meant to catch problems
+          early so you can address them before they compound. In all states, staying in close, honest
+          communication with your supervising attorney about your progress is the best way to avoid a bad
+          surprise near the end of the program.
+        </p>
+      </FAQItem>
+    </div>
+
+    <h2 class="mt-14 font-serif text-xl font-bold text-navy">Career &amp; License Portability</h2>
+    <div class="mt-2">
+      <FAQItem question="Can I practice in a different state later?" id="portability">
+        <p>
+          This is the single biggest limitation of this path, so take it seriously. Most states let
+          experienced attorneys "waive in" via admission on motion without retaking a bar exam, but nearly
+          all of those reciprocity rules require a J.D. from an ABA-accredited law school as a prerequisite,
+          which a law-office-study license doesn't give you. In practice, that usually means your license is
+          most secure in the state where you earned it, and moving to another state later may require
+          retaking that state's full bar exam (assuming that state even permits non-ABA-educated applicants
+          to sit for it at all). If there's any chance you'll want to practice in a different state down the
+          road, factor that into your decision now.
+        </p>
+      </FAQItem>
+      <FAQItem question="Will law firms hire someone who read the law instead of attending law school?">
+        <p>
+          It varies enormously by employer and practice area. Large national firms, federal clerkships, and
+          many corporate in-house roles typically expect a J.D. from an accredited law school, often as an
+          unstated hiring filter, regardless of your bar license. Solo practice, small firms, and roles
+          closely tied to the practice area you apprenticed in (especially if your supervising attorney
+          becomes a professional reference or even a future partner) tend to be far more realistic outcomes.
+          Many successful law readers ultimately go solo or join the practice they trained in.
+        </p>
+      </FAQItem>
+      <FAQItem question="Can I become a judge, prosecutor, or public defender this way?">
+        <p>
+          Often yes, at least in principle. Most of those roles require an active law license in the state,
+          not a J.D. specifically, but individual employers, judicial appointment processes, and elected
+          offices may have their own additional expectations or informal preferences. Research the specific
+          requirements for the exact role and jurisdiction you're targeting rather than assuming either way.
+        </p>
+      </FAQItem>
+    </div>
+
+    <h2 class="mt-14 font-serif text-xl font-bold text-navy">Finding a Mentor</h2>
+    <div class="mt-2">
+      <FAQItem question="How do I find a supervising attorney or judge?">
+        <p>
+          Today, entirely through your own network: attorneys you already know, local bar association
+          events, informational interviews with small-firm and solo practitioners, or simply reaching out
+          directly to attorneys whose practice interests you and asking whether they've ever considered
+          supervising a law reader. This is genuinely the hardest practical step in the entire process,
+          which is exactly why we're building a <a href="/matchmaking/">matchmaking platform</a> to make it
+          easier. See the FAQ item below.
+        </p>
+      </FAQItem>
+      <FAQItem question="Why would an attorney agree to sponsor an apprentice?">
+        <p>
+          Reasons vary: some enjoy teaching and want to pass on how they think about the law; some want
+          reliable, motivated help around the office in exchange for investing in someone's training; some
+          are eyeing a future associate or partner they've trained personally instead of hiring an unknown
+          quantity off the market; and some simply went through a similar path themselves and want to keep
+          it alive. It's a real commitment of years, though, so most attorneys will want to see genuine
+          seriousness and reliability before agreeing.
+        </p>
+      </FAQItem>
+      <FAQItem question="What is the matchmaking platform you mentioned?">
+        <p>
+          We're building a platform to directly connect aspiring apprentices with attorneys and judges who
+          are open to sponsoring one. The goal is to turn "spend months cold-networking to find a mentor"
+          into a structured, searchable process for both sides. It isn't live yet.
+          <a href="/matchmaking/">Join the waitlist</a> to be notified when it launches.
+        </p>
+      </FAQItem>
+    </div>
+
+    <Callout tone="brass" title="Still have questions?">
+      Start with our <a href="/what-is-reading-the-law/">full explainer</a>, dig into your specific
+      state's rules on the <a href="/states/">state guides</a> page, or check the
+      <a href="/resources/">resources &amp; timeline</a> page for practical next steps.
+    </Callout>
+  </div>
+</BaseLayout>

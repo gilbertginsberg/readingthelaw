@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Callout from "../../components/Callout.astro";
+import { activeStates, hybridStates } from "../../data/states";
+---
+
+<BaseLayout
+  title="State-by-State Guides"
+  description="Compare every U.S. state that lets you become a lawyer through apprenticeship: California, Vermont, Virginia, Washington, plus hybrid programs in Maine and New York."
+>
+  <PageHeader
+    eyebrow="State Guides"
+    title="Where you can legally read the law"
+    subtitle="Four states let you skip law school entirely. Two more allow a hybrid combination. Here's how each one actually works."
+  />
+
+  <div class="mx-auto max-w-5xl px-5 py-16">
+    <Callout tone="warning" title="Rules change: verify before you rely on this">
+      We've researched every rule on this page directly from each state's governing authority, but bar
+      admission rules are amended over time and our summaries can fall out of date. Before you make any
+      decision, confirm current requirements directly with the official body listed for each state.
+    </Callout>
+
+    <h2 class="mt-4 font-serif text-2xl font-bold text-navy">Active, pure apprenticeship states</h2>
+    <p class="mt-2 max-w-2xl text-ink-light">
+      In these four states, you can become fully eligible to sit the bar exam through law office study
+      alone: zero law school required.
+    </p>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-navy/10">
+      <table class="w-full min-w-[720px] border-collapse bg-white text-left text-sm">
+        <thead>
+          <tr class="bg-navy text-parchment">
+            <th class="px-4 py-3 font-serif font-semibold">State</th>
+            <th class="px-4 py-3 font-serif font-semibold">Program</th>
+            <th class="px-4 py-3 font-serif font-semibold">Duration</th>
+            <th class="px-4 py-3 font-serif font-semibold">Supervisor requirement</th>
+            <th class="px-4 py-3 font-serif font-semibold">Interim exam?</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            activeStates.map((s, i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-parchment-dark/30"}>
+                <td class="px-4 py-4 align-top font-semibold text-navy">
+                  <a href={`/states/${s.slug}/`} class="hover:text-brass">{s.name}</a>
+                </td>
+                <td class="px-4 py-4 align-top text-ink-light">{s.programName}</td>
+                <td class="px-4 py-4 align-top text-ink-light">{s.duration}</td>
+                <td class="px-4 py-4 align-top text-ink-light">{s.supervisorShort}</td>
+                <td class="px-4 py-4 align-top text-ink-light">{s.milestoneExam ?? "No"}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+      {
+        activeStates.map((s) => (
+          <a href={`/states/${s.slug}/`} class="group rounded-lg border border-navy/10 bg-white p-6 transition hover:border-brass hover:shadow-md">
+            <h3 class="font-serif text-lg font-bold text-navy group-hover:text-brass">{s.name}: {s.programName}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-light">{s.summary}</p>
+            <span class="mt-3 inline-block text-sm font-semibold text-brass group-hover:text-navy">Full details →</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <h2 class="mt-16 font-serif text-2xl font-bold text-navy">Hybrid combination states</h2>
+    <p class="mt-2 max-w-2xl text-ink-light">
+      Maine and New York don't let you skip law school entirely, but both allow you to combine a reduced
+      period of ABA-accredited law school with a period of law office study, useful if you want to cut
+      tuition costs without giving up law school credentials entirely.
+    </p>
+    <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+      {
+        hybridStates.map((s) => (
+          <a href={`/states/${s.slug}/`} class="group rounded-lg border border-navy/10 bg-white p-6 transition hover:border-brass hover:shadow-md">
+            <h3 class="font-serif text-lg font-bold text-navy group-hover:text-brass">{s.name}: {s.programName}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-light">{s.summary}</p>
+            <span class="mt-3 inline-block text-sm font-semibold text-brass group-hover:text-navy">Full details →</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <Callout tone="info" title="What about other states?">
+      A few other states (Wyoming among them) historically ran their own law reader programs but have
+      since discontinued them. Rules do occasionally change in the other direction too, so if your home
+      state isn't listed here, it's still worth checking directly with its bar admissions authority rather
+      than assuming the door is permanently closed.
+    </Callout>
+  </div>
+</BaseLayout>

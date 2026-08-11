@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Callout from "../../components/Callout.astro";
+import { states } from "../../data/states";
+
+export function getStaticPaths() {
+  return states.map((state) => ({
+    params: { slug: state.slug },
+    props: { state },
+  }));
+}
+
+const { state } = Astro.props;
+const isHybrid = state.type === "hybrid";
+---
+
+<BaseLayout
+  title={`${state.name}: ${state.programName}`}
+  description={`How to become a lawyer in ${state.name} through ${state.programName}: requirements, duration, supervisor rules, and step-by-step process. ${state.summary}`}
+>
+  <PageHeader
+    eyebrow={isHybrid ? "Hybrid Program" : "Active Apprenticeship Program"}
+    title={`${state.name}: ${state.programName}`}
+    subtitle={state.summary}
+  />
+
+  <div class="mx-auto max-w-4xl px-5 py-16">
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div class="rounded-lg border border-navy/10 bg-white p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-ink-light">Duration</p>
+        <p class="mt-1 font-serif text-sm font-bold text-navy">{state.duration}</p>
+      </div>
+      <div class="rounded-lg border border-navy/10 bg-white p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-ink-light">Governing Body</p>
+        <p class="mt-1 font-serif text-sm font-bold text-navy">{state.governingBody}</p>
+      </div>
+      <div class="rounded-lg border border-navy/10 bg-white p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-ink-light">Interim Exam</p>
+        <p class="mt-1 font-serif text-sm font-bold text-navy">{state.milestoneExam ?? "None required"}</p>
+      </div>
+      <div class="rounded-lg border border-navy/10 bg-white p-4 text-center">
+        <p class="text-xs uppercase tracking-wide text-ink-light">Official Source</p>
+        <p class="mt-1 font-serif text-sm font-bold text-brass">{state.officialSite}</p>
+      </div>
+    </div>
+
+    <Callout tone="warning" title="Verify before you rely on this">
+      This page summarizes {state.governingRule} as we understand it. Bar admission rules change, and we
+      are not {state.governingBody}. Confirm current requirements at {state.officialSite} or by contacting
+      the {state.governingBody} directly before making any decisions.
+    </Callout>
+
+    <article class="prose-legal">
+      <h2>Program at a glance</h2>
+      <ul>
+        <li><strong>Program name:</strong> {state.programName}</li>
+        <li><strong>Governing rule:</strong> {state.governingRule}</li>
+        <li><strong>Duration:</strong> {state.duration}</li>
+        <li><strong>Time commitment:</strong> {state.weeklyCommitment}</li>
+        <li><strong>Who can supervise you:</strong> {state.supervisor}</li>
+        <li><strong>Registration:</strong> {state.registration}</li>
+      </ul>
+
+      <h2>The bar exam path</h2>
+      <p>{state.barExamNote}</p>
+
+      <h2>Why apprentices choose {state.name}</h2>
+      <ul>
+        {state.highlights.map((h: string) => <li>{h}</li>)}
+      </ul>
+
+      <h2>What to weigh before committing</h2>
+      <ul>
+        {state.considerations.map((c: string) => <li>{c}</li>)}
+      </ul>
+
+      <h2>Step-by-step process</h2>
+      <ol>
+        {state.steps.map((s: string) => <li>{s}</li>)}
+      </ol>
+    </article>
+
+    <div class="mt-12 flex flex-col gap-4 rounded-lg border border-navy/10 bg-parchment-dark/40 p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="font-serif text-lg font-bold text-navy">Ready to find a supervising attorney?</p>
+        <p class="mt-1 text-sm text-ink-light">Every program above starts with finding your own mentor. We're building a platform to help.</p>
+      </div>
+      <a href="/matchmaking/" class="whitespace-nowrap rounded-sm bg-navy px-6 py-3 text-center font-semibold text-parchment hover:bg-navy-light">
+        Join the Waitlist →
+      </a>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/states/" class="font-semibold text-brass hover:text-navy">← Back to all state guides</a>
+    </div>
+  </div>
+</BaseLayout>
