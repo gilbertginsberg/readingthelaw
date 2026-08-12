@@ -1,4 +1,6 @@
 ---
+import LogoMark from "./LogoMark.astro";
+
 const navLinks = [
   { href: "/what-is-reading-the-law/", label: "What Is It" },
   { href: "/states/", label: "State Guides" },
@@ -12,7 +14,9 @@ const currentPath = Astro.url.pathname;
 <header class="sticky top-0 z-50 border-b border-navy/10 bg-parchment/95 backdrop-blur">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
     <a href="/" class="flex items-center gap-2 font-serif text-lg font-bold text-navy">
-      <span class="flex h-8 w-8 items-center justify-center rounded-sm bg-navy text-brass-light">§</span>
+      <span class="flex h-8 w-8 items-center justify-center rounded-sm bg-navy text-brass-light">
+        <LogoMark class="h-4.5 w-4.5" />
+      </span>
       Reading the Law
     </a>
     <button

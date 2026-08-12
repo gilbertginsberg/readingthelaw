@@ -1,0 +1,14 @@
+---
+interface Props {
+  class?: string;
+  veinColor?: string;
+}
+const { class: className = "h-4.5 w-4.5", veinColor = "var(--color-navy)" } = Astro.props;
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class={className} aria-hidden="true">
+  <g transform="rotate(35 16 16)">
+    <path d="M16 3 C21 7 21 19 16 29 C11 19 11 7 16 3 Z" fill="currentColor" />
+    <path d="M16 6 L16 26" stroke={veinColor} stroke-width="0.75" opacity="0.5" />
+  </g>
+</svg>
