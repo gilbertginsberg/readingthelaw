@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/PageHeader.astro";
+import WaitlistForm from "../../components/WaitlistForm.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -86,6 +87,8 @@ const formattedDate = post.data.pubDate.toLocaleDateString("en-US", {
         </a>
       </div>
     </div>
+
+    <WaitlistForm intro="Curious about legal apprenticeship? Join the waitlist to get notified when our attorney matchmaking platform launches." />
 
     <div class="mt-8 text-center">
       <a href="/blog/" class="font-semibold text-brass hover:text-navy">← Back to all posts</a>
