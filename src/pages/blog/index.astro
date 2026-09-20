@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Blog"
+  description="Notes on reading the law: state rule changes, study strategy, and stories from apprentices on the path to the bar exam without law school."
+>
+  <PageHeader
+    eyebrow="Blog"
+    title="Notes on reading the law"
+    subtitle="Rule changes, study strategy, and stories from the apprenticeship path, as we come across them."
+  />
+
+  <div class="mx-auto max-w-5xl px-5 py-16">
+    {
+      posts.length > 0 ? (
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {posts.map((post) => <BlogPostCard post={post} />)}
+        </div>
+      ) : (
+        <p class="text-center text-ink-light">
+          Nothing published yet. Check back soon, or <a href="/rss.xml" class="font-semibold text-brass hover:text-navy">subscribe via RSS</a> to get the first post when it lands.
+        </p>
+      )
+    }
+
+    {
+      posts.length > 0 && (
+        <div class="mt-10 text-center">
+          <a href="/rss.xml" class="text-sm font-semibold text-brass hover:text-navy">
+            Subscribe via RSS →
+          </a>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

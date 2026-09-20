@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => (import.meta.env.PROD ? !data.draft : true));
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = post.data.pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  type="article"
+  publishedTime={post.data.pubDate}
+  modifiedTime={post.data.updatedDate}
+>
+  <PageHeader eyebrow="Blog" title={post.data.title} subtitle={post.data.description} />
+
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    {post.data.draft && (
+      <p class="mb-6 rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-amber-900">
+        Draft, not published to the live blog index
+      </p>
+    )}
+
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-light">
+      <span>By {post.data.author}</span>
+      <span aria-hidden="true">·</span>
+      <span>{formattedDate}</span>
+      {post.data.updatedDate && (
+        <span class="text-xs text-ink-light/70">
+          (updated {post.data.updatedDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })})
+        </span>
+      )}
+    </div>
+
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-2">
+        {post.data.tags.map((tag: string) => (
+          <span class="rounded-full bg-navy/5 px-3 py-1 text-xs font-semibold text-navy">{tag}</span>
+        ))}
+      </div>
+    )}
+
+    <article class="prose-legal mt-8">
+      <Content />
+    </article>
+
+    <div class="mt-14 border-t border-navy/10 pt-10">
+      <p class="text-center font-serif text-lg font-bold text-navy">Continue exploring</p>
+      <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <a
+          href="/states/"
+          class="group rounded-lg border border-navy/10 bg-white p-5 text-center transition hover:border-brass hover:shadow-md"
+        >
+          <p class="font-serif font-bold text-navy group-hover:text-brass">State Guides</p>
+          <p class="mt-1 text-sm text-ink-light">Compare every reading-the-law program, state by state.</p>
+        </a>
+        <a
+          href="/faq/"
+          class="group rounded-lg border border-navy/10 bg-white p-5 text-center transition hover:border-brass hover:shadow-md"
+        >
+          <p class="font-serif font-bold text-navy group-hover:text-brass">FAQ</p>
+          <p class="mt-1 text-sm text-ink-light">Straight answers on cost, timelines, and the bar exam.</p>
+        </a>
+        <a
+          href="/matchmaking/"
+          class="group rounded-lg border border-navy/10 bg-white p-5 text-center transition hover:border-brass hover:shadow-md"
+        >
+          <p class="font-serif font-bold text-navy group-hover:text-brass">Join the Waitlist</p>
+          <p class="mt-1 text-sm text-ink-light">Get notified when our mentor-matching platform launches.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/blog/" class="font-semibold text-brass hover:text-navy">← Back to all posts</a>
+    </div>
+  </div>
+</BaseLayout>
