@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHeader from "../../../components/PageHeader.astro";
+import MediaEntryCard from "../../../components/MediaEntryCard.astro";
+import { getCollection } from "astro:content";
+
+const allEntries = await getCollection("media");
+const entries = allEntries.sort((a, b) => {
+  const aDate = (a.data.addedDate ?? a.data.pubDate).valueOf();
+  const bDate = (b.data.addedDate ?? b.data.pubDate).valueOf();
+  return bDate - aDate;
+});
+---
+
+<BaseLayout
+  title="Legal Apprenticeship in the Media"
+  description="A running collection of journalism and commentary about legal apprenticeship and reading the law, from outlets we have no affiliation with."
+>
+  <PageHeader
+    eyebrow="Resources"
+    title="Legal Apprenticeship in the Media"
+    subtitle="A running collection of journalism and commentary about legal apprenticeship and reading the law, from outlets we have no affiliation with. Not our own coverage, we're not there yet."
+  />
+
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    {
+      entries.length > 0 ? (
+        <div class="grid grid-cols-1 gap-5">
+          {entries.map((entry) => <MediaEntryCard entry={entry} />)}
+        </div>
+      ) : (
+        <p class="text-center text-ink-light">Nothing collected yet. Check back soon.</p>
+      )
+    }
+  </div>
+</BaseLayout>
