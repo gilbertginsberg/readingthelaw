@@ -25,9 +25,9 @@ const entries = allEntries.sort((a, b) => {
   <div class="mx-auto max-w-3xl px-5 py-16">
     {
       entries.length > 0 ? (
-        <div class="grid grid-cols-1 gap-5">
-          {entries.map((entry) => <MediaEntryCard entry={entry} />)}
-        </div>
+        <ol class="list-none space-y-6">
+          {entries.map((entry, i) => <MediaEntryCard entry={entry} index={i + 1} />)}
+        </ol>
       ) : (
         <p class="text-center text-ink-light">Nothing collected yet. Check back soon.</p>
       )
