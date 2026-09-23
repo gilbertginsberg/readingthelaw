@@ -9,6 +9,14 @@ interface Book {
   href: string;
 }
 
+const readingTheLawGuides: Book[] = [
+  {
+    title: "DIY Law School: How to Become A California Lawyer Without the Debt",
+    author: "Micah Clatterbaugh",
+    href: "https://amzn.to/3TlxZaL",
+  },
+];
+
 const historyAndBiography: Book[] = [
   { title: "Benjamin Franklin: An American Life", author: "Walter Isaacson", href: "https://amzn.to/4xFN5qp" },
   { title: "Alexander Hamilton", author: "Ron Chernow", href: "https://amzn.to/4qduW0n" },
@@ -86,6 +94,7 @@ const amazonServices: Book[] = [
 ];
 
 const categories = [
+  { name: "Reading the Law & Apprenticeship Guides", books: readingTheLawGuides },
   { name: "Legal History & Biography", books: historyAndBiography },
   { name: "Legal Reference", books: legalReference },
   { name: "Bar Exam Prep", books: barExamPrep },
